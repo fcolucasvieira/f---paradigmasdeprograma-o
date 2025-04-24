@@ -1,13 +1,13 @@
 # 💻 Documentação F# - Guia de linguagem
 
 **F#** é uma linguagem de programação concisa, desenvolvida com ênfase na expressividade e na simplicidade sintática. Projetada principalmente segundo o **paradigma funcional** e caracterizada pela tipagem estática, F# também oferece suporte aos paradigmas imperativo e orientado a objetos, configurando-se como uma linguagem multiparadigma versátil.
-A linguagem roda na plataforma .NET, possibilitando a relação entre linguagens como C#, além de permitir o amplo uso de bibliotecas disponíveis ofertadas nesse ecossistema. Dessa maneira, a diversidade de recursos propostos ao F# permite a construção de aplicações robustas e eficientes a esta linguagem.
+A linguagem roda na plataforma .NET, possibilitando a relação entre linguagens como C#, além de permitir o amplo uso de bibliotecas disponíveis ofertadas nesse ecossistema. Dessa maneira, a diversidade de recursos propostos ao F# permite a construção de aplicações robustas e eficientes com essa linguagem.
 
 ---
 
 ##📜 Histórico da Linguagem
 
-Desenvolvida no início dos aos anos 2000, a linguagem F#, projetada por **Dom Syme** surgiu em razão de um projeto de pesquisa da Microsoft Research, onde buscava-se combinar o uso de benefícios do paradigma funcional junto ao ecossitema de desenvolvimento .NET. Baseada na linguagem **OCaml**, da família ML (Meta Language), aderiu-se, sobretudo, a aplicação em setores comerciais e de grande escala.
+Desenvolvida no início dos anos 2000, a linguagem F#, projetada por **Dom Syme** surgiu em razão de um projeto de pesquisa da Microsoft Research, onde buscava-se combinar os benefícios do paradigma funcional junto ao ecossitema de desenvolvimento .NET. Baseada na linguagem **OCaml**, da família ML (Meta Language), voltou-se, sobretudo, à aplicação em setores comerciais e de grande escala.
 F# foi lançada oficialmente em 2005, sendo integrada ao Visual Studio 2010 como uma das linguagens da Microsoft voltadas ao desenvolvimento na plataforma .NET.
 Desde então, F# exerce atividades que demandam alta precisão, segurança e desempenho. Além disso, seu uso se expande em ambientes acadêmicos que exercitam o paradigma funcional, junto a entusiastas deste formato de programação.
 
@@ -15,11 +15,33 @@ Desde então, F# exerce atividades que demandam alta precisão, segurança e des
 
 ##🌟 Principais Características
 
-- ✨ **Paradigma funcional** como principal enfoque (com suporte a OOP e imperativo)
-- 💡 **Imutabilidade por padrão**
+- ✨ Ênfase no **paradigma funcional** (com suporte a OOP e imperativo)
+- 💡 **Imutabilidade por padrão**, promovendo maior segurança e previsibilidade no código
 - 🔄 **Tipagem estática** 
-- 🧩 **Pattern Matching** para manipulação elegante de dados
+- 🧩 **Pattern Matching** para manipulação expressiva de dados
 - 📚 Suporte completo ao **.NET** com a capacidade de interagir com C#, VB.NET, etc.
 - 📈 Excelente para **processamento de dados**, **análise científica**, **modelagem financeira** e **concorrência assíncrona**
+
+---
+
+## 🧰 Tipos de Uso
+
+- 📊 **Análise de Dados e Ciência de Dados**
+- 🧮 **Modelagem Matemática e Científica**
+- 💰 **Sistemas Financeiros**
+- ⚙️ **Desenvolvimento Web e Back-End**
+- 🔁 **Programação Concorrente e Assíncrona**
+- 🧪 **Desenvolvimento Acadêmico e Pesquisa**
+
+---
+
+## 🚀 Aplicações de Destaque
+
+F# é utilizado em diversas aplicações comerciais e científicas de alto desempenho. Alguns exemplos incluem:
+
+- **Jet.com** (Walmart) para algoritmos de precificação
+- **Commerzbank** e **Credit Suisse** para modelagem de risco financeiro
+- **Microsoft** em produtos internos e protótipos
+- Comunidades científicas para análise de dados e simulações
 
 ---
