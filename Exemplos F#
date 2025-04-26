@@ -1,0 +1,143 @@
+//----------------------------------------------------------------------------------
+//exemplo geral de funções, atribuição de variáveis e estruturas de fluxo(If/elif/else)
+
+open System
+
+printf "Digite sua nota: "
+let nota = Console.ReadLine() |> float// |> int para inteiros e |> string para "palavras"
+
+let avaliarNota nota = //Estrutura condicional/função
+    if nota >= 7.0 then
+        "Aprovado"
+    elif nota < 7.0 && nota > 4.0 then
+        "AF"
+    else
+        "Reprovado"
+
+let resultado = avaliarNota nota //Atribuição final e demonstração de resultado
+printfn "Resultado: %s" resultado
+//----------------------------------------------------------------------------------
+//Exemplos simples de Estruturas condicionais
+let idade = 18
+if idade >= 18 then
+    printfn "Maior de idade"
+else
+    printfn "Menor de idade"
+//----------------------------------------------------------------------------------
+let nota = 6.0
+if nota >= 7.0 then
+    printfn "Aprovado"
+elif nota >= 5.0 then
+    printfn "Recuperação"
+else
+    printfn "Reprovado"
+//----------------------------------------------------------------------------------
+//Exemplo de match (estrutura poderosa de decisão)(Parecido com Switch Case)
+let dia = "segunda"
+match dia with
+| "segunda" -> printfn "Começo da semana"
+| "sexta" -> printfn "Último dia útil"
+| _ -> printfn "Outro dia"
+//&&
+let numero = 3
+match numero with
+| 1 -> printfn "Um"
+| 2 -> printfn "Dois"
+| 3 -> printfn "Três"
+| _ -> printfn "Outro número"
+//----------------------------------------------------------------------------------
+//Exemplo de laço for
+for i in 1 .. 5 do
+    printfn "Contando: %d" i
+
+//exemplo de laço for com lista de nomes
+let nomes = ["Ana"; "Bruno"; "Carlos"]
+for nome in nomes do
+    printfn "Nome: %s" nome
+//----------------------------------------------------------------------------------
+//Exemplos de laço while
+let mutable x = 0
+while x < 3 do
+    printfn "x = %d" x
+    x <- x + 1
+//----------------------------------------------------------------------------------
+//Exemplos de laço while com string
+let mutable senha = ""
+while senha <> "1234" do
+    printf "Digite a senha: "
+    senha <- System.Console.ReadLine()
+printfn "Acesso liberado"
+
+
+
+//----------------------------------------------------------------------------------
+//EXEMPLO COMPLEXO QUE UTILIZA TODOS OS COMANDOS CITADOS PREVIAMENTE
+
+
+// Função 1: Classificação da nota com function e match
+let classificarNota = function
+    | n when n >= 9.0 -> "Excelente"
+    | n when n >= 7.0 -> "Bom"
+    | n when n >= 5.0 -> "Regular"
+    | _ -> "Insuficiente"
+
+// Função 2: Avaliação com if / elif / else
+let avaliarNota nota =
+    if nota >= 7.0 then "Aprovado"
+    elif nota >= 5.0 then "Recuperação"
+    else "Reprovado"
+
+// Função principal com while, match e for
+let sistemaSimples () =
+    let mutable rodando = true 
+    let mutable alunos : (string * float) list = []
+
+    while rodando do
+        printfn "\nComandos: cadastrar | listar | sair"
+        printf "Comando: "
+        let comando = Console.ReadLine().ToLower()
+
+        match comando with
+        | "cadastrar" ->
+            printf "Nome: "
+            let nome = Console.ReadLine()
+
+            printf "Nota: "
+            let notaStr = Console.ReadLine()
+            let ok, nota = Double.TryParse(notaStr)
+
+            if ok then
+                alunos <- (nome, nota) :: alunos
+                printfn "Status: %s | Classificação: %s" (avaliarNota nota) (classificarNota nota)
+            else
+                printfn "Nota inválida!"
+
+        | "listar" ->
+            for (nome, nota) in alunos do
+                printfn "%s: %.1f | %s | %s" nome nota (avaliarNota nota) (classificarNota nota)
+
+        | "sair" ->
+            rodando <- false
+            printfn "Saindo..."
+
+        | _ -> printfn "Comando não reconhecido."
+
+// Rodar o programa
+//sistemaSimples ()
+//function com match e when: permite criar expressões de decisão complexas e elegantes. O pattern matching com guardas (when) facilita a associação de valores com condições específicas, de forma muito mais legível do que estruturas condicionais tradicionais.
+
+//if / elif / else: estrutura condicional tradicional usada para tomada de decisão direta. É simples e eficaz para verificações lineares baseadas em valores numéricos ou lógicos.
+
+//match: utilizado para tratar diferentes possibilidades de entrada ou valor. Substitui estruturas como switch e case, sendo mais poderosa, especialmente com padrões complexos.
+
+//for: estrutura de repetição usada para percorrer coleções de forma direta. Ideal para listar elementos com clareza e controle sobre cada item da sequência.
+
+//while: loop de controle que permite repetição contínua com base em uma condição booleana. Essencial para manter programas interativos em execução até que o usuário decida encerrá-los.
+
+//Console.ReadLine() e TryParse: responsáveis por capturar e validar entradas do usuário. Juntos, garantem que os dados sejam corretamente convertidos antes de usados, prevenindo erros de execução.
+
+//Um aspecto essencial ao se trabalhar com F# é a indentação obrigatória. 
+//Ela substitui o uso de chaves para delimitar blocos de código, o que torna a leitura mais fluida e limpa. 
+//porém, isso exige atenção: uma indentação mal feita pode causar erros de compilação. 
+//Em F#, a forma como o código está alinhado não é apenas estética — ela define a estrutura lógica do programa.
+
